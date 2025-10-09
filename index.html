@@ -1,191 +1,205 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>ЭкоТакси Беларусь</title>
-<style>
-  /* подключаем локальный шрифт */
-  @font-face {
-    font-family: 'Onest';
-    src: url('fonts/Onest-Medium.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-  }
-
-  body {
-    font-family:'Onest',sans-serif;
-    margin:0; background:#f4f4f4; color:#333;
-  }
-  header, footer { background:#0b3; color:white; padding:20px;}
-  header {
-    display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap;
-  }
-  .header-left { text-align:left; }
-  .header-right { text-align:right; }
-  header a { color:white; text-decoration:none;}
-  header a:hover { text-decoration:underline;}
-
-  section { padding:20px; max-width:800px; margin:auto; background:white; margin-top:10px; border-radius:6px;}
-
-  /* список преимуществ — пузири */
-  ul {
-    list-style:none;
-    display:flex; flex-direction:column; gap:14px;
-    padding:0; margin:0;
-  }
-  ul li {
-    background:#e9ffe9;
-    border:1px solid #d0f0d0;
-    border-radius:12px;
-    padding:14px 18px;
-    display:flex; align-items:center;
-    box-shadow:0 2px 4px rgba(0,0,0,0.1);
-  }
-  ul li img {
-    width:36px; height:36px; margin-right:12px;
-    border-radius:50%; object-fit:cover;
-  }
-
-  form { display:flex; flex-direction:column; gap:14px;}
-  label { font-weight:bold; display:flex; flex-direction:column; width:100%;}
-  .required-star { color:red; margin-left:4px; font-weight:normal;}
-  input, button {
-    padding:12px; font-size:1em; border:1px solid #ccc; border-radius:4px;
-    width:100%; box-sizing:border-box;
-    font-family:'Onest',sans-serif;
-  }
-  .error-message { color:red; font-size:0.9em; margin-top:4px;}
-  button {
-    background:#0b3; color:white; border:none; cursor:pointer;
-    font-size:1.1em; font-weight:bold;
-  }
-  button:hover { background:#099;}
-  .car-block { text-align:center; margin-top:30px;}
-  .car-block img { max-width:100%; border-radius:8px;}
-  .car-info { margin-top:10px; line-height:1.6; font-size:1.1em;}
-  @media (max-width:600px){
-    header { flex-direction:column; text-align:center;}
-    .header-left, .header-right { text-align:center;}
-  }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AlfaTaxi Минск</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
-<header>
-  <div class="header-left">
-    <h1 style="margin:0;">ЭкоТакси Беларусь</h1>
-    <p style="margin:0;">Работай водителем на современных электрокарах!</p>
-  </div>
-  <div class="header-right">
-    <p style="margin:0;">📞 <a href="tel:+375297391565" style="color:white;">+375 29 739 15 65</a></p>
-    <p style="margin:0;">📍 Минск, ул.Аэродромная 20‑44</p>
-    <p style="margin:0;"><a href="https://t.me/AlenRich" target="_blank">Связаться в Telegram</a></p>
+<header class="header">
+  <div class="header-container">
+    <div class="header-brand">
+      <img class="brand-logo" src="images/siteIcons/logo.png" alt="Логотип AlfaTaxi">
+      <h1>AlfaTaxi Минск </h1>
+    </div>
+    <div class="header-contacts">
+      <p>
+        <img class="contact-icon" src="images/siteIcons/phone.png" alt="Иконка телефона">
+        <a href="tel:+375297391565">+375 29 739 15 65</a>
+      </p>
+      <p>
+        <img class="contact-icon" src="images/siteIcons/location.png" alt="Иконка адреса">
+        Минск, ул. Аэродромная 20/44
+      </p>
+      <p>
+        <img class="contact-icon" src="images/siteIcons/telegram.png" alt="Иконка Telegram">
+        <a href="https://t.me/AlenRich" target="_blank">Связаться в Telegram</a>
+      </p>
+    </div>
   </div>
 </header>
 
-<section id="conditions">
-  <h2>Условия и преимущества</h2>
-  <ul>
-    <li><img src="images/taxi.png" alt="">Новые электромобили  BYD  Yuan  UP  в  отличном  состоянии</li>
-    <li><img src="images/calendar.png" alt="">Гибкий  график  —  ты  выбираешь  смены</li>
-    <li><img src="images/money.png" alt="">Честная  комиссия  и  прозрачные  выплаты</li>
-    <li><img src="images/help.png" alt="">Поддержка  24/7  и  обслуживание  за  счёт  компании</li>
+<section class="section" id="conditions">
+  <h2 class="section-title">Условия и преимущества</h2>
+  <ul class="benefits-list">
+    <li class="benefits-item">
+      <img class="benefits-icon" src="images/benefitsIcons/taxi.png" alt="Иконка такси">
+      <span class="benefits-text">Новые электромобили в отличном техническом состоянии</span>
+    </li>
+    <li class="benefits-item">
+      <img class="benefits-icon" src="images/benefitsIcons/calendar.png" alt="Иконка календаря">
+      <span class="benefits-text">Гибкий график — сам определяешь смены и нагрузку</span>
+    </li>
+    <li class="benefits-item">
+      <img class="benefits-icon" src="images/benefitsIcons/money.png" alt="Иконка денег">
+      <span class="benefits-text">Прозрачные выплаты и выгодные условия аренды</span>
+    </li>
+    <li class="benefits-item">
+      <img class="benefits-icon" src="images/benefitsIcons/help.png" alt="Иконка поддержки">
+      <span class="benefits-text">Поддержка 24/7 и сервисное обслуживание за наш счёт</span>
+    </li>
+    <li class="benefits-item">
+      <img class="benefits-icon" src="images/benefitsIcons/briefcase.png" alt="Иконка трудоустройства">
+      <span class="benefits-text">Официальное трудоустройство</span>
+    </li>
+    <li class="benefits-item">
+      <img class="benefits-icon" src="images/benefitsIcons/law.png" alt="Иконка законодательства">
+      <span class="benefits-text">Работаем строго по законодательству РБ</span>
+    </li>
+    <li class="benefits-item">
+      <img class="benefits-icon" src="images/benefitsIcons/bonus.png" alt="Иконка бонусов">
+      <span class="benefits-text">Бонусы за привлечённых водителей</span>
+    </li>
+    <li class="benefits-item">
+      <img class="benefits-icon" src="images/benefitsIcons/tariff.png" alt="Иконка тарифов">
+      <span class="benefits-text">Тарифы: Эконом, Комфорт, Комфорт+, Детский, Доставка</span>
+    </li>
   </ul>
 </section>
 
-<section id="form">
-  <h2>Оставить заявку</h2>
-  <form id="driverForm" novalidate>
-    <label>Имя<span class="required-star">*</span>
-      <input type="text" name="Имя" placeholder="Имя" autocomplete="given-name" required>
-      <div class="error-message"></div>
-    </label>
-    <label>Фамилия
-      <input type="text" name="Фамилия" placeholder="Фамилия" autocomplete="family-name">
-      <div class="error-message"></div>
-    </label>
-    <label>Отчество
-      <input type="text" name="Отчество" placeholder="Отчество" autocomplete="additional-name">
-      <div class="error-message"></div>
-    </label>
-    <label>Телефон<span class="required-star">*</span>
-      <input type="tel" id="phone" name="Телефон" placeholder="+375 XX XXX XX XX" autocomplete="tel" required>
-      <div class="error-message"></div>
-    </label>
-    <label>Email
-      <input type="email" name="Email" placeholder="Email" autocomplete="email">
-      <div class="error-message"></div>
-    </label>
-    <label>Номер водительского удостоверения<span class="required-star">*</span>
-      <input type="text" name="Номер прав" placeholder="Номер водительского удостоверения" required>
-      <div class="error-message"></div>
-    </label>
-    <button type="submit">Отправить</button>
-  </form>
+<section class="section" id="application">
+  <h2 class="section-title">Оставить заявку</h2>
 
-  <div class="car-block">
-    <img src="images/bydYuanUP.png" alt="Электромобиль ЭкоТакси" />
-    <div class="car-info">
-      <strong>Аренда на сутки:</strong> 70 BYN<br>
-      <strong>Заработок за 10 часов работы:</strong> ≈ 150 – 200 BYN
-    </div>
+  <form class="form" id="driverForm" novalidate>
+    <label class="form-label">
+      <span>Имя<span class="required-star">*</span></span>
+      <input class="form-input" type="text" name="Имя" placeholder="Имя" required>
+      <div class="error-message"></div>
+    </label>
+
+    <label class="form-label">
+      <span>Фамилия</span>
+      <input class="form-input" type="text" name="Фамилия" placeholder="Фамилия">
+      <div class="error-message"></div>
+    </label>
+
+    <label class="form-label">
+      <span>Отчество</span>
+      <input class="form-input" type="text" name="Отчество" placeholder="Отчество">
+      <div class="error-message"></div>
+    </label>
+
+    <label class="form-label">
+      <span>Телефон<span class="required-star">*</span></span>
+      <input class="form-input" type="tel" id="phone" name="Телефон" placeholder="+375 XX XXX XX XX" required>
+      <div class="error-message"></div>
+    </label>
+
+    <label class="form-label">
+      <span>Номер водительского удостоверения<span class="required-star">*</span></span>
+      <input class="form-input" type="text" name="Номер прав" placeholder="Номер водительского удостоверения" required>
+      <div class="error-message"></div>
+    </label>
+
+    <button class="form-button" type="submit">Стать водителем!</button>
+  </form>
+</section>
+
+<section class="section car-gallery-section">
+  <h2 class="section-title">Наш автопарк</h2>
+  <div class="car-gallery">
+    <img class="car-image" src="images/cars/1.png" alt="Автомобиль 1">
+    <img class="car-image" src="images/cars/2.png" alt="Автомобиль 2">
+    <img class="car-image" src="images/cars/3.png" alt="Автомобиль 3">
+    <img class="car-image" src="images/cars/4.png" alt="Автомобиль 4">
+    <img class="car-image" src="images/cars/5.png" alt="Автомобиль 5">
+    <img class="car-image" src="images/cars/6.png" alt="Автомобиль 6">
   </div>
 </section>
 
-<footer><p style="text-align:center;">© 2024 ЭкоТакси Беларусь</p></footer>
+<section class="section about-section">
+  <img class="about-image" src="images/cars/car.png" alt="Гараж AlfaTaxi">
+  <div class="about-content">
+    <ul class="benefits-list">
+      <li class="benefits-item">
+        <span class="benefits-text">Каждый автомобиль проходит плановое ТО и содержится в идеальном состоянии</span>
+      </li>
+      <li class="benefits-item">
+        <span class="benefits-text">Машины зарегистрированы в реестре такси и оформлены в фирменной цветографике</span>
+      </li>
+      <li class="benefits-item">
+        <span class="benefits-text"> Все документы подготовлены для лицензирования или уже включены в лицензию парка</span>
+      </li>
+      <li class="benefits-item">
+        <span class="benefits-text">Cтраховка и опознавательные знаки входят в комплект — ничего не нужно дооформлять</span>
+      </li>
+      <li class="benefits-item">
+        <span class="benefits-text">Удобные условия аренды — посуточно, на неделю или долгосрочно</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>© 2024 AlfaTaxi Беларусь</p>
+  <p>ИП Юндов ОМ</p>
+</footer>
 
 <script>
-  const phoneInput=document.getElementById('phone');
-  phoneInput.addEventListener('input',()=>{
-    let digits=phoneInput.value.replace(/\D/g,'');
-    if(digits.startsWith('375')) digits=digits.slice(3);
-    if(digits.length>9) digits=digits.slice(0,9);
-    let f='+375';
-    if(digits.length>0) f+=' '+digits.slice(0,2);
-    if(digits.length>2) f+=' '+digits.slice(2,5);
-    if(digits.length>5) f+=' '+digits.slice(5,7);
-    if(digits.length>7) f+=' '+digits.slice(7,9);
-    phoneInput.value=f;
-  });
+const phoneInput = document.getElementById('phone');
+phoneInput.addEventListener('input', () => {
+  let digits = phoneInput.value.replace(/\D/g, '');
+  if (digits.startsWith('375')) digits = digits.slice(3);
+  if (digits.length > 9) digits = digits.slice(0, 9);
 
-  const form=document.getElementById('driverForm');
-  form.addEventListener('submit',e=>{
-    e.preventDefault();
-    form.querySelectorAll('.error-message').forEach(el=>el.textContent='');
-    let valid=true;
-    const data=new FormData(form);
-    const name=data.get('Имя').trim();
-    const digits=data.get('Телефон').replace(/\D/g,'').replace(/^375/,'').trim();
-    const license=data.get('Номер прав').trim();
+  let formatted = '+375';
+  if (digits.length > 0) formatted += ' ' + digits.slice(0, 2);
+  if (digits.length > 2) formatted += ' ' + digits.slice(2, 5);
+  if (digits.length > 5) formatted += ' ' + digits.slice(5, 7);
+  if (digits.length > 7) formatted += ' ' + digits.slice(7, 9);
 
-    if(!name){showError('Имя','Пожалуйста, заполните это поле');valid=false;}
-    if(digits.length!==9){
-      showError('Телефон','Введите корректный номер в формате +375 XX XXX XX XX');valid=false;
-    }
-    if(!license){showError('Номер прав','Пожалуйста, заполните это поле');valid=false;}
-    if(!valid)return;
+  phoneInput.value = formatted;
+});
 
-    const gv=n=>data.get(n)?.trim()||'—';
-    const phoneDisplay=`+375 ${digits.slice(0,2)} ${digits.slice(2,5)} ${digits.slice(5,7)} ${digits.slice(7,9)}`;
-    const info=
-      `Новая заявка 👇%0A`+
-      `Имя: ${gv('Имя')}%0A`+
-      `Фамилия: ${gv('Фамилия')}%0A`+
-      `Отчество: ${gv('Отчество')}%0A`+
-      `Телефон: ${phoneDisplay}%0A`+
-      `Email: ${gv('Email')}%0A`+
-      `Номер водительского удостоверения: ${gv('Номер прав')}`;
+const form = document.getElementById('driverForm');
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  form.querySelectorAll('.error-message').forEach(el => el.textContent = '');
+  let isValid = true;
+  const formData = new FormData(form);
+  const name = formData.get('Имя').trim();
+  const phoneDigits = formData.get('Телефон').replace(/\D/g, '').replace(/^375/, '').trim();
+  const license = formData.get('Номер прав').trim();
 
-    const username='AlenRich';
-    window.open(`https://t.me/${username}?text=${info}`,'_blank');
-  });
+  if (!name) { showError('Имя', 'Пожалуйста, заполните это поле'); isValid = false; }
+  if (phoneDigits.length !== 9) { showError('Телефон', 'Введите корректный номер в формате +375 XX XXX XX XX'); isValid = false; }
+  if (!license) { showError('Номер прав', 'Пожалуйста, заполните это поле'); isValid = false; }
+  if (!isValid) return;
 
-  function showError(name,msg){
-    const input=[...form.elements].find(el=>el.name===name);
-    const err=input.parentElement.querySelector('.error-message');
-    err.textContent=msg;
-  }
+  const getValue = (fieldName) => formData.get(fieldName)?.trim() || '—';
+  const phoneDisplay = `+375 ${phoneDigits.slice(0,2)} ${phoneDigits.slice(2,5)} ${phoneDigits.slice(5,7)} ${phoneDigits.slice(7,9)}`;
+
+  const message =
+    `Новая заявка 👇%0A` +
+    `Имя: ${getValue('Имя')}%0A` +
+    `Фамилия: ${getValue('Фамилия')}%0A` +
+    `Отчество: ${getValue('Отчество')}%0A` +
+    `Телефон: ${phoneDisplay}%0A` +
+    `Email: ${getValue('Email')}%0A` +
+    `Номер водительского удостоверения: ${getValue('Номер прав')}`;
+
+  window.open(`https://t.me/AlenRich?text=${message}`, '_blank');
+});
+
+function showError(field, msg) {
+  const input = [...form.elements].find(el => el.name === field);
+  const err = input.parentElement.querySelector('.error-message');
+  err.textContent = msg;
+}
 </script>
+
 </body>
 </html>
