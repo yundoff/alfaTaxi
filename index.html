@@ -13,7 +13,7 @@
   <div class="header-container">
     <div class="header-brand">
       <img class="brand-logo" src="images/siteIcons/logo.png" alt="Логотип AlfaTaxi">
-      <h1>AlfaTaxi Минск </h1>
+      <h1>AlfaTaxi Минск </h1>
     </div>
     <div class="header-contacts">
       <p>
@@ -190,12 +190,11 @@ form.addEventListener('submit', (e) => {
   const phoneDisplay = `+375 ${phoneDigits.slice(0,2)} ${phoneDigits.slice(2,5)} ${phoneDigits.slice(5,7)} ${phoneDigits.slice(7,9)}`;
 
   const message =
-    `Новая заявка 👇%0A` +
+    `Заявка %0A` +
     `Имя: ${getValue('Имя')}%0A` +
     `Фамилия: ${getValue('Фамилия')}%0A` +
     `Отчество: ${getValue('Отчество')}%0A` +
     `Телефон: ${phoneDisplay}%0A` +
-    `Email: ${getValue('Email')}%0A` +
     `Номер водительского удостоверения: ${getValue('Номер прав')}`;
 
   window.open(`https://t.me/AlenRich?text=${message}`, '_blank');
