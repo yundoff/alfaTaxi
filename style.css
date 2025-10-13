@@ -1,6 +1,6 @@
 @font-face {
-  font-family: 'Onest';
-  src: url('fonts/Onest-Medium.ttf') format('truetype');
+  font-family: 'Ubuntu';
+  src: url('fonts/Ubuntu-Medium.ttf') format('truetype');
 }
 
 :root {
@@ -22,7 +22,7 @@
 
 body {
   margin: 0;
-  font-family: 'Onest', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   background: var(--bg-light);
   color: var(--main-color);
   line-height: 1.5;
