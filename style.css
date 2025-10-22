@@ -129,6 +129,9 @@ body {
   .section {
     width: var(--mobwidth-max);
   }
+  .brand-logo {
+    width: 100px;
+  }
 }
 @media (max-width: 768px) {
   .header-brand h1 { 
