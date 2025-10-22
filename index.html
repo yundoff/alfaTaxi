@@ -3,150 +3,237 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AlfaTaxi Минск</title>
+  <title>AlfaTaxi - официальный партнер Яндекс Такси</title>
   <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Ищете работу в такси в Минске? 
+  Альфатакси предлагает водител ям новые электромобили (Комфорт, Комфорт+) и высокий еженедельный доход.
+  Легкое трудоустройство, выгодные условия и поддержка 24/7. Начните зарабатывать уже завтра!">
+<meta name="keywords" content="работа в такси Минск, водитель такси,
+аренда авто, аренда машины, работа без опыта, свободный график, гибкий график, высокий заработок,
+еженедельные выплаты, подработка, Альфа Такси, AlfaTaxi, работа водителем в яндекс, такси яндекс, 
+работа в яндекс такси, электромобиль такси Минск">
 </head>
 
 <body>
 
 <header class="header">
-  <div class="header-container">
-    <div class="header-brand">
-      <img class="brand-logo" src="images/siteIcons/logo.png" alt="Логотип AlfaTaxi">
-      <h1>AlfaTaxi Минск </h1>
-    </div>
-    <div class="header-contacts">
-      <p>
-        <img class="contact-icon" src="images/siteIcons/phone.png" alt="Иконка телефона">
-        <a href="tel:+375297391565">+375 29 739 15 65</a>
-      </p>
-      <p>
-        <img class="contact-icon" src="images/siteIcons/location.png" alt="Иконка адреса">
-        Минск, ул. Аэродромная 20/44
-      </p>
-      <p>
-        <img class="contact-icon" src="images/siteIcons/telegram.png" alt="Иконка Telegram">
-        <a href="https://t.me/AlenRich" target="_blank">Связаться в Telegram</a>
-      </p>
+  <div class="header-top-bar"></div>
+  <div class="header-main">
+    <div class="header-container">
+      <div class="header-brand">
+        <img class="brand-logo" src="resources/images/siteIcons/logo.png" alt="Логотип AlfaTaxi">
+        <h1>AlfaTaxi</h1>
+      </div>
+      <div class="header-contacts">
+        <p>
+          <a href="tel:+375297391565">+375 29 739 15 65</a>
+          <img class="contact-icon" src="resources/images/siteIcons/phone.png" alt="Телефон">
+        </p>
+        <p>
+          Минск, ул. Аэродромная 20/44
+          <img class="contact-icon" src="resources/images/siteIcons/location.png" alt="Адрес">
+        </p>
+        <p>
+          <a href="https://t.me/AlenRich" target="_blank">Связаться в Telegram</a>
+          <img class="contact-icon" src="resources/images/siteIcons/telegram.png" alt="Telegram">
+        </p>
+      </div>
     </div>
   </div>
 </header>
 
 <section class="section slogan-section">
-  <h2 class="slogan-title">Стань частью команды AlfaTaxi — вместе двигаем Минск вперёд!</h2>
-</section>
-
-<section class="section" id="conditions">
-  <h2 class="section-title">Условия и преимущества</h2>
-  <ul class="benefits-list">
-    <li class="benefits-item">
-      <img class="benefits-icon" src="images/benefitsIcons/taxi.png" alt="Иконка такси">
-      <span class="benefits-text">Новые электромобили в отличном техническом состоянии</span>
-    </li>
-    <li class="benefits-item">
-      <img class="benefits-icon" src="images/benefitsIcons/calendar.png" alt="Иконка календаря">
-      <span class="benefits-text">Гибкий график — сам определяешь смены и нагрузку</span>
-    </li>
-    <li class="benefits-item">
-      <img class="benefits-icon" src="images/benefitsIcons/money.png" alt="Иконка денег">
-      <span class="benefits-text">Прозрачные выплаты и выгодные условия аренды</span>
-    </li>
-    <li class="benefits-item">
-      <img class="benefits-icon" src="images/benefitsIcons/help.png" alt="Иконка поддержки">
-      <span class="benefits-text">Поддержка 24/7 и сервисное обслуживание за наш счёт</span>
-    </li>
-    <li class="benefits-item">
-      <img class="benefits-icon" src="images/benefitsIcons/briefcase.png" alt="Иконка трудоустройства">
-      <span class="benefits-text">Официальное трудоустройство</span>
-    </li>
-    <li class="benefits-item">
-      <img class="benefits-icon" src="images/benefitsIcons/law.png" alt="Иконка законодательства">
-      <span class="benefits-text">Работаем строго по законодательству РБ</span>
-    </li>
-    <li class="benefits-item">
-      <img class="benefits-icon" src="images/benefitsIcons/bonus.png" alt="Иконка бонусов">
-      <span class="benefits-text">Бонусы за привлечённых водителей</span>
-    </li>
-    <li class="benefits-item">
-      <img class="benefits-icon" src="images/benefitsIcons/tariff.png" alt="Иконка тарифов">
-      <span class="benefits-text">Тарифы: Эконом, Комфорт, Комфорт+, Детский, Доставка</span>
-    </li>
-  </ul>
-</section>
-
-<section class="section" id="application">
-  <h2 class="section-title">Оставить заявку</h2>
-
-  <form class="form" id="driverForm" novalidate>
-    <label class="form-label">
-      <span>Имя<span class="required-star">*</span></span>
-      <input class="form-input" type="text" name="Имя" placeholder="Имя" required>
-      <div class="error-message"></div>
-    </label>
-
-    <label class="form-label">
-      <span>Фамилия</span>
-      <input class="form-input" type="text" name="Фамилия" placeholder="Фамилия">
-      <div class="error-message"></div>
-    </label>
-
-    <label class="form-label">
-      <span>Отчество</span>
-      <input class="form-input" type="text" name="Отчество" placeholder="Отчество">
-      <div class="error-message"></div>
-    </label>
-
-    <label class="form-label">
-      <span>Телефон<span class="required-star">*</span></span>
-      <input class="form-input" type="tel" id="phone" name="Телефон" placeholder="+375 XX XXX XX XX" required>
-      <div class="error-message"></div>
-    </label>
-
-    <label class="form-label">
-      <span>Номер водительского удостоверения<span class="required-star">*</span></span>
-      <input class="form-input" type="text" name="Номер прав" placeholder="Номер водительского удостоверения" required>
-      <div class="error-message"></div>
-    </label>
-
-    <button class="form-button" type="submit">Стать водителем!</button>
-  </form>
-</section>
-
-<section class="section car-gallery-section">
-  <h2 class="section-title">Наш автопарк</h2>
-  <div class="car-gallery">
-    <img class="car-image" src="images/cars/1.png" alt="Автомобиль 1">
-    <img class="car-image" src="images/cars/2.png" alt="Автомобиль 2">
-    <img class="car-image" src="images/cars/3.png" alt="Автомобиль 3">
-    <img class="car-image" src="images/cars/4.png" alt="Автомобиль 4">
-    <img class="car-image" src="images/cars/5.png" alt="Автомобиль 5">
-    <img class="car-image" src="images/cars/6.png" alt="Автомобиль 6">
+  <div class="slogan-container">
+    <img 
+      src="resources/images/cars.jpg" 
+      alt="Автомобиль BYD YUAN PLUS для работы в Яндекс Такси" 
+      loading="lazy" 
+    />
+  </div>
+  <div class="slogan-overlay">
+    <h2 class="slogan-title">
+      Работа в такси в Минске на электромобиле BYD YUAN PLUS
+    </h2>
+    <p class="slogan-subtext">
+      Работа водителем в сервисе Яндекс Такси предоставляет уникальные возможности 
+      для тех, кто ищет гибкий график и стабильный доход. Особенно привлекательным 
+      этот вариант становится благодаря возможности использования арендованного 
+      авто от таксопарка.
+    </p>
+    <a href="#application" class="slogan-button">Оставить заявку</a>
   </div>
 </section>
 
-<section class="section about-section">
-  <img class="about-image" src="images/cars/car.png" alt="Гараж AlfaTaxi">
-  <div class="about-content">
-    <ul class="benefits-list">
-      <li class="benefits-item">
-        <span class="benefits-text">Каждый автомобиль проходит плановое ТО и содержится в идеальном состоянии</span>
-      </li>
-      <li class="benefits-item">
-        <span class="benefits-text">Машины зарегистрированы в реестре такси и оформлены в фирменной цветографике</span>
-      </li>
-      <li class="benefits-item">
-        <span class="benefits-text"> Все документы подготовлены для лицензирования или уже включены в лицензию парка</span>
-      </li>
-      <li class="benefits-item">
-        <span class="benefits-text">Cтраховка и опознавательные знаки входят в комплект — ничего не нужно дооформлять</span>
-      </li>
-      <li class="benefits-item">
-        <span class="benefits-text">Удобные условия аренды — посуточно, на неделю или долгосрочно</span>
-      </li>
-            <li class="benefits-item">
-        <span class="benefits-text">Мы заботимся о том, чтобы наши водители могли сосредоточиться на своей работе, а не на бюрократических процедурах.</span>
-      </li>
-    </ul>
+<section class="feature-carousel">
+  <div class="carousel-header">
+    <h2 class="carousel-title">Условия и преимущества</h2>
+  </div>
+  <div class="carousel-container">
+    <div class="carousel-track">
+      <div class="carousel-card">
+        <img draggable="false" src="resources/images/benefits/byd.jpeg" alt="Работа на машине компании BYD Yuan Plus">
+          <div class="card-overlay">
+            <p>Работа на машине компании BYD Yuan Plus</p>
+            <p>Тарифы: КОМФОРТ, КОМФОРТ+, ЭЛЕКТРО</p>
+            <p>Обслуживание, зарядка, мойка — за счёт организации</p>
+        </div>
+      </div>
+      <div class="carousel-card">
+        <img draggable="false" src="resources/images/benefits/documents.png" alt="КАСКО и страховки">
+          <div class="card-overlay">
+            <p>Машины в Госреестре, полностью укомплектованы</p>
+            <p>КАСКО, страховка по форме А6, страховка на пассажира</p>
+            <p>Оформление по трудовому договору</p>
+          </div>
+      </div>
+      <div class="carousel-card">
+        <img draggable="false" src="resources/images/benefits/help.png" alt="Машины в Госреестре">
+          <div class="card-overlay">
+            <p>Техподдержка 24/7</p>
+            <p>Работа по безналичному расчёту</p>
+          </div>
+      </div>
+    </div>
+  </div>
+  <div class="carousel-progress">
+    <div class="carousel-progress-bar"></div>
+  </div>
+</section>
+
+<section class="requirements-conditions">
+  <div class="reqcon-container">
+    <div class="reqcon-column reqcon-leftcol">
+      <h2 class="reqcon-section-title">Требования к водителю</h2>
+      <div class="reqcon-left">
+        <div class="reqcon-item">Водительское удостоверение категории "B"</div>
+        <div class="reqcon-item">Водительский стаж — 2 полных года и более. Возраст от 21 года</div>
+        <div class="reqcon-item">Паспортные данные с указанием идентификационного номера</div>
+        <div class="reqcon-item">Водительская медицинская справка (не старше 3 лет)</div>
+        <div class="reqcon-item">Сертификат о прохождении курсов повышения квалификации (если с момента получения в/у прошло более 5 лет)</div>
+      </div>
+    </div>
+    <div class="reqcon-column reqcon-rightcol">
+      <h2 class="reqcon-section-title">Условия аренды</h2>
+      <div class="reqcon-right">
+        <div class="reqcon-item">Доход водителя 40 %</div>
+        <div class="reqcon-item">Низкая комиссия парка — 18 %</div>
+        <div class="reqcon-item">Машины на КАСКО, страховка по форме А6, страховка на пассажира</div>
+        <div class="reqcon-item">Машины в Госсударственном реестре, укомплектованы необходимым оборудованием;</div>
+        <div class="reqcon-item">Выплаты поступают регулярно каждую неделю</div>
+        <div class="reqcon-item">Обслуживание, зарядка, мойка – за счет организации</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- <section class="requirements-conditions">
+  <div class="reqcon-container">
+    <div class="reqcon-column reqcon-leftcol">
+      <h2 class="reqcon-section-title">Требования</h2>
+      <div class="reqcon-left">
+        <div class="reqcon-item">Водительское удостоверение категории "B"</div>
+        <div class="reqcon-item">Водительский стаж — 2 полных года и более. Возраст от 21 года</div>
+        <div class="reqcon-item">Паспортные данные с указанием идентификационного номера</div>
+        <div class="reqcon-item">Водительская медицинская справка (не старше 3 лет)</div>
+        <div class="reqcon-item">Сертификат о повышении квалификации, если с момента получения в/у прошло более 5 лет</div>
+      </div>
+    </div>
+    <div class="reqcon-column reqcon-rightcol">
+      <h2 class="reqcon-section-title">Условия</h2>
+
+      <div class="reqcon-rightgrid">
+        <div class="reqcon-subcol">
+          <h3 class="reqcon-subtitle">Аренда</h3>
+          <div class="reqcon-item">Стоимость — 800 р в неделю</div>
+          <div class="reqcon-item">Комиссия парка 16 %</div>
+          <div class="reqcon-item">Скидка на зарядку до 8,5 %</div>
+          <div class="reqcon-item">Выплаты 2 раза в месяц</div>
+        </div>
+        <div class="reqcon-subcol">
+          <h3 class="reqcon-subtitle">Процент</h3>
+          <div class="reqcon-item">Работа под 0 – 5 %</div>
+          <div class="reqcon-item">Рассрочка с постепенным выкупом</div>
+          <div class="reqcon-item">Подключение к агрегаторам без комиссий</div>
+          <div class="reqcon-item">Бонусы по рейтингу и тажу</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<section class="section application-section" id="application">
+  <div class="application-inner">
+    <h2 class="section-title">Оставить заявку</h2>
+
+    <div class="application-layout">
+      <form class="form" id="driverForm" novalidate>
+        <label class="form-label">
+          <span>Имя<span class="required-star">*</span></span>
+          <input class="form-input" type="text" name="Имя" placeholder="Имя" required>
+          <div class="error-message"></div>
+        </label>
+
+        <label class="form-label">
+          <span>Фамилия</span>
+          <input class="form-input" type="text" name="Фамилия" placeholder="Фамилия">
+          <div class="error-message"></div>
+        </label>
+
+        <label class="form-label">
+          <span>Отчество</span>
+          <input class="form-input" type="text" name="Отчество" placeholder="Отчество">
+          <div class="error-message"></div>
+        </label>
+
+        <label class="form-label">
+          <span>Телефон<span class="required-star">*</span></span>
+          <input class="form-input" type="tel" id="phone" name="Телефон" placeholder="+375 XX XXX XX XX" required>
+          <div class="error-message"></div>
+        </label>
+
+        <label class="form-label">
+          <span>Номер водительского удостоверения<span class="required-star">*</span></span>
+          <input class="form-input" type="text" name="Номер прав" placeholder="Номер водительского удостоверения" required>
+          <div class="error-message"></div>
+        </label>
+
+        <button class="form-button" type="submit">Стать водителем!</button>
+      </form>
+
+      <div class="application-image">
+        <img src="driver.jpg" alt="Водитель" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section car-benefits-section">
+  <h2 class="section-title">Наш автопарк</h2>
+  <div class="car-benefits-grid">
+    <div class="car-card">
+      <img src="resources/images/cars/1.png" alt="Автомобиль 1">
+      <p>Каждый автомобиль проходит плановое ТО и содержится в идеальном состоянии.</p>
+    </div>
+    <div class="car-card">
+      <img src="resources/images/cars/2.png" alt="Автомобиль 2">
+      <p>Машины зарегистрированы в реестре такси и оформлены в фирменной цветографике.</p>
+    </div>
+    <div class="car-card">
+      <img src="resources/images/cars/3.png" alt="Автомобиль 3">
+      <p>Все документы подготовлены для лицензирования или уже включены в лицензию парка.</p>
+    </div>
+    <div class="car-card">
+      <img src="resources/images/cars/4.png" alt="Автомобиль 4">
+      <p>Страховка и опознавательные знаки входят в комплект — ничего не нужно дооформлять.</p>
+    </div>
+    <div class="car-card">
+      <img src="resources/images/cars/5.png" alt="Автомобиль 5">
+      <p>Удобные условия аренды — посуточно, на неделю или долгосрочно.</p>
+    </div>
+    <div class="car-card">
+      <img src="resources/images/cars/6.png" alt="Автомобиль 6">
+      <p>Мы заботимся о том, чтобы водители сосредотачивались на работе, а не на бюрократии.</p>
+    </div>
   </div>
 </section>
 
@@ -155,56 +242,8 @@
   <p>ИП Юндов ОМ</p>
 </footer>
 
-<script>
-const phoneInput = document.getElementById('phone');
-phoneInput.addEventListener('input', () => {
-  let digits = phoneInput.value.replace(/\D/g, '');
-  if (digits.startsWith('375')) digits = digits.slice(3);
-  if (digits.length > 9) digits = digits.slice(0, 9);
-
-  let formatted = '+375';
-  if (digits.length > 0) formatted += ' ' + digits.slice(0, 2);
-  if (digits.length > 2) formatted += ' ' + digits.slice(2, 5);
-  if (digits.length > 5) formatted += ' ' + digits.slice(5, 7);
-  if (digits.length > 7) formatted += ' ' + digits.slice(7, 9);
-
-  phoneInput.value = formatted;
-});
-
-const form = document.getElementById('driverForm');
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
-  form.querySelectorAll('.error-message').forEach(el => el.textContent = '');
-  let isValid = true;
-  const formData = new FormData(form);
-  const name = formData.get('Имя').trim();
-  const phoneDigits = formData.get('Телефон').replace(/\D/g, '').replace(/^375/, '').trim();
-  const license = formData.get('Номер прав').trim();
-
-  if (!name) { showError('Имя', 'Пожалуйста, заполните это поле'); isValid = false; }
-  if (phoneDigits.length !== 9) { showError('Телефон', 'Введите корректный номер в формате +375 XX XXX XX XX'); isValid = false; }
-  if (!license) { showError('Номер прав', 'Пожалуйста, заполните это поле'); isValid = false; }
-  if (!isValid) return;
-
-  const getValue = (fieldName) => formData.get(fieldName)?.trim() || '—';
-  const phoneDisplay = `+375 ${phoneDigits.slice(0,2)} ${phoneDigits.slice(2,5)} ${phoneDigits.slice(5,7)} ${phoneDigits.slice(7,9)}`;
-
-  const message =
-    `Заявка %0A` +
-    `Имя: ${getValue('Имя')}%0A` +
-    `Фамилия: ${getValue('Фамилия')}%0A` +
-    `Отчество: ${getValue('Отчество')}%0A` +
-    `Телефон: ${phoneDisplay}%0A` +
-    `Номер водительского удостоверения: ${getValue('Номер прав')}`;
-
-  window.open(`https://t.me/AlenRich?text=${message}`, '_blank');
-});
-
-function showError(field, msg) {
-  const input = [...form.elements].find(el => el.name === field);
-  const err = input.parentElement.querySelector('.error-message');
-  err.textContent = msg;
-}
+<script
+  src = "script.js">
 </script>
 
 </body>

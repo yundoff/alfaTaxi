@@ -1,52 +1,85 @@
+/* MARK: Fonts */
 @font-face {
   font-family: 'Ubuntu';
-  src: url('fonts/Ubuntu-Medium.ttf') format('truetype');
+  src: url('resources/fonts/Ubuntu-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 
+@font-face {
+  font-family: 'Ubuntu';
+  src: url('resources/fonts/Ubuntu-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* MARK: Root Variables */
 :root {
-  --main-color: #000;
-  --accent-color: #ffb300;
-  --bg-light: #fffaf4;
-  --section-bg: #ffffff;
-  --card-bg: #f7f7f7;
-  --shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  --border-radius: 6px;
+  --color-main: #000000;
+  --color-text: #000000;
+  --color-accent: #ffb300;
+  --color-bg-light: #ffffff;
+  --color-bg-section: #ffffff;
+  --color-bg-card: #f7f7f7;
+  --color-error: #d32f2f;
+
+  --border: 1px solid #e0e0e0;
+  --width-max: 70vw;
+  --mobwidth-max: 90vw;  
+  --font-base: 16px;
+  --transition: 0.3s ease;
+  --gap: 16px;
 }
 
+/* MARK: Base Styles */
 * {
   box-sizing: border-box;
   overflow-wrap: break-word;
-  word-wrap: break-word;
-  hyphens: none;
+  margin: 0;
+  padding: 0;
 }
+
+html { font-size: 16px; }
 
 body {
   margin: 0;
   font-family: 'Ubuntu', sans-serif;
-  background: var(--bg-light);
-  color: var(--main-color);
+  background: var(--color-bg-light);
+  color: var(--color-text);
+  font-size: var(--font-base);
   line-height: 1.5;
 }
 
-/* HEADER */
-.header,
-.footer {
+/* MARK: Header */
+.header {
+  width: 100%;
+  border-bottom: var(--border);
+}
+
+.header-top-bar {
   background: #1b1b1b;
-  color: #fff;
-  padding: 20px;
+  height: 24px;
+}
+
+.header-main {
+  color: var(--color-main);
+  width: var(--width-max);
+  margin: 0 auto;
+  padding: var(--gap) 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .header-container {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   flex-wrap: wrap;
-  max-width: 1200px;
-  margin: 0 auto;
-  gap: 20px;
+  gap: var(--gap);
 }
 
-/* Logo */
 .header-brand {
   display: flex;
   align-items: center;
@@ -61,22 +94,21 @@ body {
 
 .header-brand h1 {
   margin: 0;
-  font-size: 1.8em;
+  font-size: 28px;
   line-height: 1.1;
-  color: #fff;
 }
 
-/* Contacts */
 .header-contacts {
-  text-align: right;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: 4px;
+  gap: 5px;
+  text-align: right;
 }
 
 .header-contacts p {
   margin: 0;
+  font-size: 13px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -87,293 +119,705 @@ body {
 .contact-icon {
   width: 18px;
   height: 18px;
-  flex-shrink: 0;
 }
 
 .header-contacts a {
-  color: white;
+  color: var(--color-main);
   text-decoration: none;
+  transition: color var(--transition);
 }
 
 .header-contacts a:hover {
+  color: var(--color-accent);
   text-decoration: underline;
 }
 
-/* SECTIONS */
-.section {
-  padding: 30px 20px;
-  max-width: 900px;
-  margin: 20px auto 0;
-  background: var(--section-bg);
-  border-radius: var(--border-radius);
-  box-shadow: var(--shadow);
+@media (max-width: 992px) {
+  .header-main,
+  .section {
+    width: var(--mobwidth-max);
+  }
+}
+@media (max-width: 768px) {
+  .header-brand h1 { 
+    font-size: 24px; 
+  } 
+}
+@media (max-width: 480px) {
+  .header-brand h1 { 
+    font-size: 16px; 
+  }
 }
 
-.section-title {
-  text-align: left;
-  margin-bottom: 25px;
-  font-size: 1.8em;
-  line-height: 1.3;
-}
-
-/* SLOGAN */
+/* MARK: Slogan */
 .slogan-section {
-  text-align: center;
-  background: var(--accent-color);
-  color: #000;
-  padding: 40px 20px;
-  border-radius: var(--border-radius);
-  box-shadow: var(--shadow);
-  margin: 30px auto;
-  max-width: 900px;
-}
-
-.slogan-title {
-  font-size: 1.9em;
-  font-weight: 700;
-  margin: 0;
-  line-height: 1.3;
-}
-
-/* BENEFITS LIST */
-.benefits-list {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px 20px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.benefits-item {
   display: flex;
-  flex-direction: row;
-  align-items: center; /* по центру по вертикали 👈 */
-  background: var(--card-bg);
-  border-left: 5px solid var(--accent-color);
-  border-radius: var(--border-radius);
-  padding: 16px 20px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-  gap: 12px;
-  flex-wrap: nowrap;
+  margin: 0 auto;
+  width: var(--width-max);
+  background: var(--color-bg-section);
+  gap: 32px;
+  padding: 32px 0;
+  align-items: stretch;
 }
 
-.benefits-icon {
-  width: 34px;
-  height: 34px;
-  flex-shrink: 0;
-}
-
-.benefits-text {
+.slogan-container {
   flex: 1;
-  line-height: 1.4;
-  min-width: 0;
-  text-align: left;
-  white-space: normal;
-  overflow-wrap: break-word;
-  word-break: normal;
-}
-
-/* FORM */
-.form {
   display: flex;
-  flex-direction: column;
-  gap: 10px;
+  object-fit: cover;
+  justify-content: center;
+  overflow: hidden;
 }
-
-.form-label {
-  display: flex;
-  flex-direction: column;
-  font-weight: bold;
-}
-
-.form-label span {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  margin-bottom: 4px;
-}
-
-.required-star {
-  color: var(--accent-color);
-  font-weight: normal;
-  flex-shrink: 0;
-}
-
-.form-input,
-.form-button {
-  padding: 12px;
-  font-size: 1em;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+.slogan-container img {
   width: 100%;
-  font-family: inherit;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
-
-.form-input:focus {
-  outline: none;
-  border-color: var(--accent-color);
+.slogan-overlay {
+  flex: 1.2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: var(--color-bg-section);
+  text-align: left;
 }
-
-.error-message {
-  color: #d32f2f;
-  font-size: 0.85em;
-  margin-top: 5px;
-  min-height: 1.2em;
+.slogan-title {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 20px;
 }
-
-.form-button {
-  background: var(--accent-color);
-  color: #000;
-  border: none;
-  cursor: pointer;
-  font-size: 1.2em;
-  font-weight: bold;
-  transition: background 0.3s;
-  margin-top: 12px;
-}
-
-.form-button:hover {
-  background: #ffa000;
-}
-
-/* CAR GALLERY */
-.car-gallery-section {
-  text-align: center;
-  margin-top: 30px;
-}
-
-.car-gallery-title {
-  font-size: 1.6em;
-  font-weight: bold;
+.slogan-subtext {
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 60ch;
   margin-bottom: 25px;
 }
 
-.car-gallery {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
+.slogan-button {
+  display: inline-block;
+  align-self: flex-start;
+  padding: 14px 28px;
+  background: var(--color-accent);
+  color: var(--color-main);
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 16px;
+  transition: background var(--transition), transform 0.2s ease;
+}
+.slogan-button:hover { transform: translateY(-2px); }
+
+@media (max-width:992px) {
+  .slogan-section { 
+    width: var(--mobwidth-max);
+  }
+  .slogan-title {
+    font-size: 32px;
+    margin-bottom: 8px;
+  }
+  .slogan-subtext { 
+    font-size: 16px;
+  }
 }
 
-.car-image {
+@media (max-width:768px) {
+  .slogan-section {
+    flex-direction: column;
+  }
+  .slogan-container {
+    aspect-ratio: 16 / 9;
+  }
+  .slogan-overlay {
+    text-align: right;
+    align-items: flex-end;
+  }
+  .slogan-button {
+    align-self: flex-end;
+  }
+}
+
+@media (max-width:480px) {
+  .slogan-title {
+    font-size: 19px;
+  }
+}
+
+/* MARK: Carousel */
+.feature-carousel {
   width: 100%;
-  border-radius: 8px;
-  transition: none;
+  padding: 60px 0;
+  background: #000;
+  color: #fff;
 }
 
-/* ABOUT */
-.about-section {
+.carousel-header {
+  width: var(--width-max);
+  margin: 0 auto 40px;
+  text-align: left;
+}
+
+.carousel-title {
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.carousel-container {
+  width: 90%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.carousel-track {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
-  align-items: center;
-  gap: 30px;
+  gap: 25px;
+  align-items: stretch;
 }
 
-.about-image {
-  width: 300px;
-  border-radius: 8px;
-  flex-shrink: 0;
+.carousel-card {
+  position: relative;
+  flex: 1 1 30%;
+  max-width: 30%;
+  height: 450px;
+  overflow: hidden;
+  background: #111;
 }
 
-.about-content {
-  flex: 1;
-  min-width: 0;
+.carousel-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-/* FOOTER */
-.footer {
-  text-align: center;
-  margin-top: 30px;
+.card-overlay {
+  background: rgba(0,0,0,0.3);
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 14px;
+  font-family: 'Ubuntu', sans-serif;
 }
 
-.footer p {
-  margin: 0;
+.card-overlay p {
+  margin: 0 0 8px;
+  font-size: 19px;
+  font-weight: 600;
+  line-height: 1.4;
 }
 
-/* RESPONSIVE */
-@media (max-width: 900px) {
-  .car-gallery {
-    grid-template-columns: repeat(2, 1fr);
+@media (max-width: 992px) {
+  .carousel-container {
+    width: 100%;
+    margin: 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    padding-inline: 0;
   }
 
-  .about-image {
-    width: 250px;
+  .carousel-track {
+    flex-wrap: nowrap;
+    gap: 15px;
+    width: max-content;
+    justify-content: flex-start;
+  }
+
+  .carousel-card {
+    min-height: 80vw;
+    flex: 0 0 90vw;
+    height: auto;
+    aspect-ratio: 16/10;
+    scroll-snap-align: start;
+  }
+
+  .card-overlay p {
+    font-size: 13px;
+  }
+
+  .carousel-progress {
+    display: block;
+    width: 66.6%;
+    height: 4px;
+    margin: 20px auto 0;
+    background: rgba(255,255,255,0.2);
+    overflow: hidden;
+  }
+
+  .carousel-progress-bar {
+    height: 100%;
+    width: 0%;
+    background: var(--color-accent);
+    transition: width 0.2s ease;
+  }
+}
+
+@media (min-width: 992px) {
+  .carousel-progress {
+    display: none;
+  }
+}
+
+/* MARK: Requirements & Conditions */
+.requirements-conditions {
+  display: block;
+  width:100%;
+}
+
+.reqcon-container {
+  display: flex;
+  flex-wrap: nowrap;
+  width:100%;
+  min-height:500px;
+}
+
+.reqcon-column {
+  flex:1 1 50%;
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:40px 60px;
+  overflow:hidden;
+  z-index:1;
+}
+.reqcon-column::before {
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:0;
+}
+.reqcon-column>*{ position:relative; z-index:2; }
+
+.reqcon-section-title {
+  font-size:48px;
+  font-weight:700;
+  margin-bottom:30px;
+  line-height:1.3;
+}
+.reqcon-item, .reqcon-right p {
+  font-size:22px;
+  font-weight:500;
+  line-height:1.8;
+  margin:0 0 10px;
+}
+.reqcon-leftcol {
+  align-items:flex-end;
+  text-align:right;
+  background:url('resources/images/driving.png') center/cover no-repeat;
+  color:#fff;
+}
+.reqcon-leftcol::before { background:rgba(0,0,0,0.6); }
+.reqcon-rightcol {
+  align-items:flex-start;
+  text-align:left;
+  background:var(--color-accent);
+  color:var(--color-main);
+}
+
+@media (max-width: 992px) {
+  .reqcon-section-title {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+
+  .reqcon-item,
+  .reqcon-right p {
+    font-size: 18px;
+  }
+
+  .reqcon-container {
+    flex-direction: column;
+  }
+
+  .reqcon-column {
+    padding: 30px 20px;
   }
 }
 
 @media (max-width: 768px) {
-  .header-container {
-    flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
-    gap: 10px;
+  .reqcon-section-title {
+    font-size: 26px;
   }
 
-  .header-contacts {
-    align-items: flex-start;
-    text-align: left;
+  .reqcon-item,
+  .reqcon-right p {
+    font-size: 16px;
+    line-height: 1.5;
   }
 
-  .header-contacts p {
-    justify-content: flex-start;
-  }
-
-  .about-section {
-    flex-direction: column;
-  }
-
-  .about-image {
-    width: 100%;
-    max-width: 400px;
-    margin: 0 auto;
-  }
-
-  .section-title {
-    font-size: 1.6em;
-    line-height: 1.2;
-  }
-
-  .benefits-list {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 600px) {
-  .car-gallery {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .section {
+  .reqcon-column {
     padding: 20px 15px;
-    margin-top: 15px;
-  }
-
-  .section-title {
-    font-size: 1.5em;
-  }
-
-  .benefits-text {
-    font-size: 0.95em;
   }
 }
 
-@media (max-width: 480px) {
-  .header-brand h1 {
-    font-size: 1.5em;
+/* .requirements-conditions {
+  display: block;
+  width: 100%;
+}
+
+.reqcon-container {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  min-height: 500px;
+}
+
+.reqcon-column {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px 60px;
+  overflow: hidden;
+  z-index: 1;
+}
+.reqcon-column::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.reqcon-column > * {
+  position: relative;
+  z-index: 2;
+}
+
+.reqcon-leftcol {
+  flex: 1 1 33.333%;
+  align-items: flex-end;
+  text-align: right;
+  background: url("resources/images/driving.png") center/cover no-repeat;
+  color: #fff;
+}
+.reqcon-leftcol::before {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.reqcon-rightcol {
+  flex: 1 1 66.666%;
+  align-items: flex-start;
+  text-align: left;
+  background: var(--color-accent);
+  color: var(--color-main);
+} 
+
+.reqcon-section-title {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  line-height: 1.3;
+}
+
+.reqcon-item,
+.reqcon-right p {
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.8;
+  margin: 0 0 10px;
+}
+
+.reqcon-rightgrid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: stretch;
+  gap: 20px 40px;
+}
+
+.reqcon-subcol {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.reqcon-subtitle {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.reqcon-subcol:nth-child(2) {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  padding: 10px 20px;
+}
+
+.reqcon-subcol:nth-child(2) .reqcon-item::before {
+  content: "➤ ";
+  color: #000;
+  font-weight: 700;
+  margin-right: 4px;
+}
+
+@media (max-width: 992px) {
+  .reqcon-container {
+    flex-direction: column;
   }
 
-  .car-gallery-title {
-    font-size: 1.3em;
+  .reqcon-leftcol,
+  .reqcon-rightcol {
+    flex: 1 1 100%;
   }
 
-  .section-title {
-    font-size: 1.4em;
-    line-height: 1.2;
+  .reqcon-section-title {
+    font-size: 32px;
+    margin-bottom: 20px;
   }
 
-  .form-input,
-  .form-button {
-    padding: 10px;
-    font-size: 0.95em;
+  .reqcon-subtitle {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+
+  .reqcon-item,
+  .reqcon-right p {
+    font-size: 18px;
+  }
+
+  .reqcon-rightgrid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .reqcon-column {
+    padding: 30px 20px;
   }
 }
+
+ @media (max-width: 768px) {
+  .reqcon-section-title {
+    font-size: 26px;
+  }
+
+  .reqcon-subtitle {
+    font-size: 20px;
+  }
+
+  .reqcon-item,
+  .reqcon-right p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .reqcon-column {
+    padding: 20px 15px;
+  }
+} */
+
+/* MARK: Application Section */
+.application-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  overflow: hidden;
+  background:var(--color-bg,#fff);
+  width: 100%;
+  margin: 60px auto 0;
+}
+.application-inner {
+  width: var(--width-max);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.application-inner .section-title {
+  font-size: 36px;
+  text-align:left;
+  margin:0;
+  color:var(--color-text,#000);
+}
+.application-layout {
+  background: #1b1b1b;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 40px;
+  width: 100%;
+  padding: 40px;
+  box-sizing: border-box;
+  color: #f2f2f2;
+  overflow: hidden;
+}
+#driverForm {
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  width:100%;
+  gap:12px;
+}
+.form-label {
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:6px;
+}
+.form-input {
+  width:100%;
+  padding:12px;
+  border:1px solid #555;
+  background:transparent;
+  color:#f2f2f2;
+  border-radius:0;
+  font-size:16px;
+  transition:all var(--transition);
+}
+.form-input::placeholder { 
+  color:#bbb;
+}
+.form-input:focus {
+  outline:none;
+  border-color:var(--color-accent);
+  background:rgba(255,255,255,0.05);
+}
+.required-star {
+  color:var(--color-accent);
+}
+.error-message {
+  color:var(--color-error,#ff5757);
+  font-size:14px;
+  min-height:18px;
+}
+.form-button {
+  margin-top:12px;
+  padding:12px;
+  font-size:19px;
+  font-weight:700;
+  border:2px solid var(--color-accent);
+  background:var(--color-accent);
+  color:var(--color-main,#fff);
+  cursor:pointer;
+  transition:background 0.3s,color 0.3s;
+}
+.form-button:hover {
+  background:transparent;
+  color:var(--color-accent);
+}
+
+.application-image {
+  flex:1;
+  background:url("resources/images/handshake.png") center/cover no-repeat;
+  border-radius:8px;
+  min-height:100%;
+}
+.application-image img { display:none; }
+
+@media(max-width:992px) {
+  .application-inner {
+    width: var(--mobwidth-max);
+  }
+  .application-layout{
+    flex-direction:column;
+    align-items:center;
+    gap:24px;
+    padding:40px 24px;
+    background:#1b1b1b;
+  }
+  .application-image {
+    display:none;
+  }
+  #driverForm {
+    width:100%;
+  }
+  .section-title {
+    font-size:32px;
+    text-align:center;
+  }
+}
+
+/* MARK: Car Gallery */
+.car-benefits-section {
+  width: var(--width-max);
+  margin: 0 auto;
+  padding: 60px 0;
+  background: var(--color-bg-section, #1b1b1b);
+  color: var(--color-main, #ffffff);
+}
+
+.section-title {
+  text-align: left;
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 48px;
+}
+
+.car-benefits-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.1%;
+  margin: 0 auto;
+}
+
+.car-card {
+  width: 33%;
+  background: rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.car-card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+.car-card p {
+  padding: 16px;
+  font-size: 20px;
+  line-height: 1.4;
+}
+
+@media (max-width:992px) {
+  .car-benefits-section {
+    width: var(--mobwidth-max, 90%);
+    margin: 0 auto;
+    padding: 32px 0;
+  }
+
+  .car-benefits-grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .car-card {
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 24px;
+  }
+
+  .car-card img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+  }
+
+  .car-card p {
+    text-align: right;
+    padding: 16px 24px;
+    font-size: 20px;
+  }
+}
+
+@media (max-width:480px) {
+  .car-card p {
+    font-size: 14px;
+  }
+}
+
+/* MARK: Footer */
+.footer {
+  text-align:center;
+  margin-top:30px;
+}
+.footer p { margin:0; }
