@@ -821,3 +821,51 @@ body {
   margin-top:30px;
 }
 .footer p { margin:0; }
+
+/* MARK: Global Mobile Adjustments */
+@media (max-width: 768px) {
+  /* Центрируем заголовки */
+  .section-title,
+  .header-brand h1,
+  .carousel-title,
+  .reqcon-section-title,
+  .application-inner .section-title {
+    text-align: center;
+  }
+
+  /* Текстовые блоки — на всю ширину */
+  .slogan-subtext,
+  .header-contacts,
+  .reqcon-item,
+  .reqcon-right p,
+  .car-card p,
+  .slogan-overlay,
+  #driverForm,
+  .application-layout,
+  .carousel-header {
+    text-align: center;
+    width: 100%;
+  }
+
+  /* Кнопки — по центру */
+  .slogan-button {
+    align-self: center;
+  }
+
+  /* Блок требований и условий — все элементы по центру */
+  .reqcon-column {
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  .reqcon-section-title {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .reqcon-item,
+  .reqcon-right p {
+    width: 100%;
+    text-align: center;
+  }
+}
