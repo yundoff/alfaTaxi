@@ -76,26 +76,18 @@ body {
 .header-container {
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
   gap: var(--gap);
 }
 
 .header-brand {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 1px;
 }
 
 .brand-logo {
-  width: 48px;
+  width: 200px;
   height: auto;
-  flex-shrink: 0;
-}
-
-.header-brand h1 {
-  margin: 0;
-  font-size: 28px;
-  line-height: 1.1;
 }
 
 .header-contacts {
@@ -146,6 +138,34 @@ body {
 @media (max-width: 480px) {
   .header-brand h1 { 
     font-size: 16px; 
+  }
+}
+
+/* MARK: Subheader */
+.sub-header {
+  width: 100%;
+  background: #ffb300;
+  padding: 8px 0;
+  text-align: center;
+}
+
+.sub-header-text {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 600;
+  color: #000;
+  letter-spacing: 0.3px;
+}
+
+@media (max-width: 768px) {
+  .sub-header {
+    padding: 6px 0;
+  }
+
+  .sub-header-text {
+    font-size: 24px;
+    line-height: 1.4;
+    padding: 0 12px;
   }
 }
 
